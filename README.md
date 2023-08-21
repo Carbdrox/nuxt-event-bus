@@ -14,18 +14,21 @@ A Nuxt3 plugin which adds a global event bus to your nuxt-project.
 npm i nuxt-event-bus --save
 ```
 
+## Setup
+Add `'nuxt-event-bus'` to the modules array inside `nuxt.config.ts`.
+
 ## Usage
 Inside your Components e.g. `App.vue`
 ```javascript
 export default {
     created() {
-        this.$event.on('eventName', () => {
+        this.$event.$on('eventName', () => {
             console.log('event Fired!')
         });
     },
     methods: {
         fireEvent() {
-            this.$event.emit('eventName');
+            this.$event.$emit('eventName');
         }
     }
 }
@@ -33,7 +36,7 @@ export default {
 
 ### Interface
 This Plugin provides the following interface   
-`this.$event.on(eventName, listener, amount)`:
+`this.$event.$on(eventName, listener, amount)`:
 
 | Parameter | Required | Description                                                                     |
 |-----------|----------|---------------------------------------------------------------------------------|
@@ -41,14 +44,14 @@ This Plugin provides the following interface
 | listener  | yes      | The function that will be executed when the event is fired.                     |
 | amount    | no       | The number of times the listener should be executed. (empty or -1 for no limit) |
 
-`this.$event.off(eventName, listener)`:
+`this.$event.$off(eventName, listener)`:
 
 | Parameter | Required | Description                                                                                                                |
 |-----------|----------|----------------------------------------------------------------------------------------------------------------------------|
 | eventName | no       | The name of the event to remove. If no eventName specified, all events will be deleted                                     |
 | listener  | no       | The function of the event to be deleted. If no function is specified, all functions of the specified event will be deleted |
 
-`this.$event.emit(eventName, params)`:
+`this.$event.$emit(eventName, params)`:
 
 | Parameter  | Required | Description                                                                                                  |
 |------------|----------|--------------------------------------------------------------------------------------------------------------|

@@ -14,8 +14,8 @@ import {defineNuxtComponent} from "#app";
 
 export default defineNuxtComponent({
     mounted() {
-        this.$event.on('testEvent', this.listener);
-        this.$event.on('secondEvent', this.listener2);
+        this.$event.$on('testEvent', this.listener);
+        this.$event.$on('secondEvent', this.listener2);
         // this.$on('testEvent', this.listener);
     },
     methods: {
@@ -26,7 +26,7 @@ export default defineNuxtComponent({
             console.log('hello from app2');
         },
         fireEvent() {
-            this.$event.emit('childEvent', 'Hello from Child');
+            this.$event.$emit('childEvent', 'Hello from Child');
         }
     }
 })
