@@ -21,6 +21,10 @@ export class EventBus {
 
     removeListener(eventName: string = '', listener: Function | null = null): void {
 
+        if (!this.listeners) {
+            return;
+        }
+
         if (!eventName || !this.listeners.hasOwnProperty(eventName)) {
             for (let key in this.listeners) {
                 delete this.listeners[key];
@@ -42,7 +46,7 @@ export class EventBus {
     }
 
     emit(eventName: string, parameters: object = {}): void {
-        if (!this.listeners.hasOwnProperty(eventName)) {
+        if (!this.listeners?.hasOwnProperty(eventName)) {
             return;
         }
 
