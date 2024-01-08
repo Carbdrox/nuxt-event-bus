@@ -1,6 +1,6 @@
 {
   "name": "nuxt-event-bus",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A Nuxt3 plugin which adds a global event bus to your project.",
   "amdName": "NuxtEventBus",
   "author": "Christian Förster",
