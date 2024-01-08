@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v1.0.6
+
+[compare changes](https://github.com/Carbdrox/nuxt-event-bus/compare/v1.0.4...v1.0.6)
+
 ## v1.0.4
 
 [compare changes](https://github.com/Carbdrox/nuxt-event-bus/compare/v1.0.3...v1.0.4)
