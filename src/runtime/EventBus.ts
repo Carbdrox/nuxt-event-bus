@@ -26,10 +26,6 @@ export class EventBus {
         }
 
         if (!eventName || !this.listeners.hasOwnProperty(eventName)) {
-            for (let key in this.listeners) {
-                delete this.listeners[key];
-            }
-
             return;
         }
 
@@ -42,6 +38,16 @@ export class EventBus {
             if (this.listeners[eventName][index]['callback'] === listener) {
                 delete this.listeners[eventName][index];
             }
+        }
+    }
+
+    removeAllListeners(): void {
+        if (!this.listeners) {
+            return;
+        }
+
+        for (let key in this.listeners) {
+            delete this.listeners[key];
         }
     }
 
