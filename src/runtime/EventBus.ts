@@ -26,10 +26,6 @@ export class EventBus {
         }
 
         if (!eventName || !this.listeners.hasOwnProperty(eventName)) {
-            for (let key in this.listeners) {
-                delete this.listeners[key];
-            }
-
             return;
         }
 
