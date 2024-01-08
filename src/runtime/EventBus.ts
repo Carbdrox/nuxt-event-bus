@@ -41,6 +41,16 @@ export class EventBus {
         }
     }
 
+    removeAllListeners(): void {
+        if (!this.listeners) {
+            return;
+        }
+
+        for (let key in this.listeners) {
+            delete this.listeners[key];
+        }
+    }
+
     emit(eventName: string, parameters: object = {}): void {
         if (!this.listeners?.hasOwnProperty(eventName)) {
             return;
